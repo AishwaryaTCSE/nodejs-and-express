@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Idly",
+    "price": 50,
+    "category": "Breakfast"
+  },
+  {
+    "id": 2,
+    "name": "Dosa",
+    "price": 70,
+    "category": "Breakfast"
+  },
+  {
+    "id": 3,
+    "name": "Meals",
+    "price": 120,
+    "category": "Lunch"
+  },
+  {
+    "id": 4,
+    "name": "Idly",
+    "price": 50,
+    "category": "Breakfast"
+  }
+]
