@@ -1,0 +1,12 @@
+{
+  "tasks": [
+    {
+      "id": 1760010481517,
+      "title": "Build Login Page",
+      "description": "Create login UI for users",
+      "tag": "frontend",
+      "priority": "high",
+      "status": "pending"
+    }
+  ]
+}
