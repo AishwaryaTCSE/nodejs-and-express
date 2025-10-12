@@ -1,0 +1,57 @@
+use order_management
+
+db.orders.insertMany([
+  {
+    "order_id": 1,
+    "customer_name": "John Doe",
+    "items": ["Laptop", "Mouse"],
+    "total_amount": 65000,
+    "order_status": "pending"
+  },
+  {
+    "order_id": 2,
+    "customer_name": "Jane Smith",
+    "items": ["Headphones", "Charger"],
+    "total_amount": 3000,
+    "order_status": "shipped"
+  },
+  {
+    "order_id": 3,
+    "customer_name": "Alice Johnson",
+    "items": ["Mobile Phone"],
+    "total_amount": 20000,
+    "order_status": "delivered"
+  },
+  {
+    "order_id": 4,
+    "customer_name": "Bob Brown",
+    "items": ["Tablet", "Keyboard"],
+    "total_amount": 15000,
+    "order_status": "pending"
+  },
+  {
+    "order_id": 5,
+    "customer_name": "Chris Green",
+    "items": ["Smartwatch"],
+    "total_amount": 7000,
+    "order_status": "shipped"
+  }
+])
+
+// 1. Retrieve all shipped orders
+db.orders.find({ order_status: "shipped" })
+
+// 2. Update total_amount of order_id: 1
+db.orders.updateOne({ order_id: 1 }, { $set: { total_amount: 70000 } })
+
+// 3. Delete order with order_id: 4
+db.orders.deleteOne({ order_id: 4 })
+
+// 4. Retrieve order of Alice Johnson
+db.orders.find({ customer_name: "Alice Johnson" })
+
+// 5. Update order_status of order_id: 2
+db.orders.updateOne({ order_id: 2 }, { $set: { order_status: "delivered" } })
+
+// 6. Retrieve all orders where total_amount >= 15000
+db.orders.find({ total_amount: { $gte: 15000 } })
