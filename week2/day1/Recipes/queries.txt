@@ -1,0 +1,75 @@
+// 1. Retrieve all recipes with cuisine "Italian"
+db.recipes.find({ cuisine: "Italian" });
+
+// 2. Retrieve all recipes with prep_time < 30
+db.recipes.find({ prep_time: { $lt: 30 } });
+
+// 3. Retrieve recipes where price > 500
+db.recipes.find({ price: { $gt: 500 } });
+
+// 4. Retrieve all recipes sorted by price ascending
+db.recipes.find().sort({ price: 1 });
+
+// 5. Update price of recipe_id 2 to 900
+db.recipes.updateOne({ recipe_id: 2 }, { $set: { price: 900 } });
+
+// 6. Retrieve only name & price fields
+db.recipes.find({}, { name: 1, price: 1, _id: 0 });
+
+// 7. Recipes with difficulty "medium" & price < 600
+db.recipes.find({ difficulty: "medium", price: { $lt: 600 } });
+
+// 8. Recipes sorted by prep_time descending
+db.recipes.find().sort({ prep_time: -1 });
+
+// 9. Insert new recipe Chocolate Cake
+db.recipes.insertOne({
+  "recipe_id": 11,
+  "name": "Chocolate Cake",
+  "ingredients": ["Flour","Sugar","Cocoa Powder","Eggs","Butter"],
+  "cuisine": "American",
+  "prep_time": 50,
+  "difficulty": "medium",
+  "price": 750
+});
+
+// 10. Delete recipe_id 4 (Caesar Salad)
+db.recipes.deleteOne({ recipe_id: 4 });
+
+// 11. Recipes with cuisine Japanese or Thai
+db.recipes.find({ cuisine: { $in: ["Japanese","Thai"] } });
+
+// 12. Recipes where ingredients include "Egg"
+db.recipes.find({ ingredients: "Egg" });
+
+// 13. Update prep_time of Pad Thai to 35
+db.recipes.updateOne({ recipe_id: 7 }, { $set: { prep_time: 35 } });
+
+// 14. Delete all recipes where price > 1000
+db.recipes.deleteMany({ price: { $gt: 1000 } });
+
+// 15. Retrieve first 3 recipes
+db.recipes.find().limit(3);
+
+// 16. Skip first 2 recipes
+db.recipes.find().skip(2);
+
+// 17. Thai recipes sorted by price descending
+db.recipes.find({ cuisine: "Thai" }).sort({ price: -1 });
+
+// 18. Insert new recipe Hummus
+db.recipes.insertOne({
+  "recipe_id": 12,
+  "name": "Hummus",
+  "ingredients": ["Chickpeas","Tahini","Garlic","Olive Oil","Lemon Juice"],
+  "cuisine": "Middle Eastern",
+  "prep_time": 15,
+  "difficulty": "easy",
+  "price": 300
+});
+
+// 19. Count recipes with difficulty "easy"
+db.recipes.countDocuments({ difficulty: "easy" });
+
+// 20. Recipes with prep_time > 40
+db.recipes.find({ prep_time: { $gt: 40 } });
