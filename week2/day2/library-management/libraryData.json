@@ -1,0 +1,32 @@
+[
+  {
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "status": "available",
+    "borrowerName": null,
+    "borrowDate": null,
+    "dueDate": null,
+    "returnDate": null,
+    "overdueFees": 0
+  },
+  {
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "status": "available",
+    "borrowerName": null,
+    "borrowDate": null,
+    "dueDate": null,
+    "returnDate": null,
+    "overdueFees": 0
+  },
+  {
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert Kiyosaki",
+    "status": "available",
+    "borrowerName": null,
+    "borrowDate": null,
+    "dueDate": null,
+    "returnDate": null,
+    "overdueFees": 0
+  }
+]
